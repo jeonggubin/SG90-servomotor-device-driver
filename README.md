@@ -77,7 +77,7 @@ gcc -o my_app my_app.c
 <br>
 <img src="https://github.com/user-attachments/assets/ec079434-355d-427c-ba27-b65c2c6a8986" width="800" />
 
-## 🎬 동작 데모 영상
+## 🎬 동작 영상
 https://github.com/user-attachments/assets/3a8123bc-0439-435e-a2c4-35660ca64147
 
 ---

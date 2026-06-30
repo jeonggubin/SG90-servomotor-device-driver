@@ -12,7 +12,7 @@
 
 ---
 
-## 🔌 회로 구성 (Circuit Configuration)
+## 🔌 회로 구성
 
 | 서보 모터 핀 (SG90) | 라즈베리파이 핀 | 설명 |
 | :--- | :--- | :--- |
@@ -22,7 +22,7 @@
 
 ---
 
-## 📂 파일 구조 (File Structure)
+## 📂 파일 구조
 
 ```text
 📂 pwm_driver
@@ -30,6 +30,7 @@
 ├── 📄 my_app.c            # 테스트 및 제어용 유저 애플리케이션 코드
 └── 📄 my_gpio_driver.c    # 커널 디바이스 드라이버 소스 코드 (read/write fops 구현)
 ```
+---
 
 ## 🚀 빌드 및 실행 방법 (Commands)
 
@@ -66,3 +67,14 @@ gcc -o my_app my_app.c
 # 9. 애플리케이션 실행
 ./my_app
 ```
+---
+
+## 💻 실행 및 테스트 결과
+애플리케이션을 실행하여 1000us, 1500us, 2000us의 펄스 폭 제어 명령을 차례대로 전달하는 화면입니다.
+### 📊 제어 결과 확인 (로그)
+<img src="https://github.com/user-attachments/assets/636c462c-3342-4dd3-bd19-469126173170" width="400" />
+<br>
+<img src="https://github.com/user-attachments/assets/ec079434-355d-427c-ba27-b65c2c6a8986" width="800" />
+
+### 🎬 동작 데모 영상
+https://github.com/user-attachments/assets/3a8123bc-0439-435e-a2c4-35660ca64147

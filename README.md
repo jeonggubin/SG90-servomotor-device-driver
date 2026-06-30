@@ -30,3 +30,39 @@
 ├── 📄 my_app.c            # 테스트 및 제어용 유저 애플리케이션 코드
 └── 📄 my_gpio_driver.c    # 커널 디바이스 드라이버 소스 코드 (read/write fops 구현)
 ```
+
+## 🚀 빌드 및 실행 방법 (Commands)
+
+아래 명령어를 터미널에 차례대로 입력하여 디바이스 드라이버를 빌드하고 실행할 수 있습니다.
+
+```bash
+# 1. 작업 폴더 작성 및 이동
+mkdir pwm_driver
+cd pwm_driver
+
+# 2. 커널 소스 코드 및 드라이버 소스 작성 (vi 또는 nano 편집기 사용)
+vi my_gpio_driver.c
+
+# 3. 빌드 시작 (이전 파일 정리 후 컴파일)
+make clean && make
+
+# 4. 커널 모듈 로드
+sudo insmod my_gpio_driver.ko
+
+# 5. 모듈 로드 확인 및 주번호(Major Number) 찾기
+dmesg | tail
+cat /proc/devices | grep "my_gpio_dev"
+
+# 6. 디바이스 노드 수동 생성 (dmesg나 /proc/devices에서 확인한 주번호를 입력하세요. 예: 509)
+# ※ 주의: 소스 코드 내 device_create로 자동 생성된 경우 이 단계는 건너뛰어도 됩니다.
+sudo mknod /dev/my_gpio c [주번호] 0
+
+# 7. 일반 사용자도 접근 가능하도록 디바이스 노드에 권한 부여
+sudo chmod 666 /dev/my_gpio
+
+# 8. 유저 애플리케이션 컴파일
+gcc -o my_app my_app.c
+
+# 9. 애플리케이션 실행
+./my_app
+```

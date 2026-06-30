@@ -13,6 +13,7 @@
 ---
 
 ## 🔌 회로 구성
+<img width="800" height="459" alt="image (3)" src="https://github.com/user-attachments/assets/d618bdb7-a8f8-459a-8241-ab444acd66e1" />
 
 | 서보 모터 핀 (SG90) | 라즈베리파이 핀 | 설명 |
 | :--- | :--- | :--- |

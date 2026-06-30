@@ -26,7 +26,7 @@
 
 ```text
 📂 pwm_driver
-├── 📄 my_gpio_driver.c    # 커널 디바이스 드라이버 소스 코드 (read/write fops 구현)
-├── 📄 my_app.c            # 테스트 및 제어용 유저 애플리케이션 코드
 ├── 📄 Makefile            # 커널 모듈 및 앱 통합 빌드 스크립트
-└── 📄 README.md           
+├── 📄 my_app.c            # 테스트 및 제어용 유저 애플리케이션 코드
+└── 📄 my_gpio_driver.c    # 커널 디바이스 드라이버 소스 코드 (read/write fops 구현)
+```
